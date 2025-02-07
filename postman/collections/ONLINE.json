@@ -1,0 +1,399 @@
+{
+	"info": {
+		"_postman_id": "5aa03a1f-3611-43d3-9bf7-01689b191d82",
+		"name": "ONLINE",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "26699781-5aa03a1f-3611-43d3-9bf7-01689b191d82"
+	},
+	"item": [
+		{
+			"name": "Внешние",
+			"item": [
+				{
+					"name": "СБИС.Аутентифицировать",
+					"id": "41308baf-4764-478c-8373-7b0433f75b94",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json-rpc;charset=utf-8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"jsonrpc\": \"2.0\",\r\n   \"method\": \"СБИС.Аутентифицировать\",\r\n   \"params\": {\r\n      \"Параметр\": {\r\n         \"Логин\": \"{{login}}\",\r\n         \"Пароль\": \"{{password}}\"\r\n      }\r\n   },\r\n   \"id\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://online.sbis.ru/auth/service/",
+							"protocol": "https",
+							"host": [
+								"online",
+								"sbis",
+								"ru"
+							],
+							"path": [
+								"auth",
+								"service",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "СБИС.ОтправитьКодАутентификации",
+					"id": "f0cf0de1-9e61-44f9-80ff-feea4530303f",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json-rpc;charset=utf-8",
+								"type": "text"
+							},
+							{
+								"key": "X-SBISSessionID",
+								"value": "{{session_id}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"jsonrpc\": \"2.0\",\r\n   \"method\": \"СБИС.ОтправитьКодАутентификации\",\r\n   \"params\": {\r\n      \"Идентификатор\": \"{{session_id}}\"\r\n   },\r\n   \"id\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://online.sbis.ru/auth/service/",
+							"protocol": "https",
+							"host": [
+								"online",
+								"sbis",
+								"ru"
+							],
+							"path": [
+								"auth",
+								"service",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "СБИС.ПодтвердитьВход",
+					"id": "272c5014-75f0-4096-a78f-8735a33a3e57",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json-rpc;charset=utf-8",
+								"type": "text"
+							},
+							{
+								"key": "X-SBISSessionID",
+								"value": "{{session_id}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"jsonrpc\": \"2.0\",\r\n   \"method\": \"СБИС.ПодтвердитьВход\",\r\n   \"params\": {\r\n      \"Идентификатор\": \"{{session_id}}\",\r\n\t  \"Код\": \"8570\"\r\n   },\r\n   \"id\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://online.sbis.ru/auth/service/",
+							"protocol": "https",
+							"host": [
+								"online",
+								"sbis",
+								"ru"
+							],
+							"path": [
+								"auth",
+								"service",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "СБИС.СписокЗадач",
+					"id": "1920de65-7f6d-4dce-b636-25eacdd6f517",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json-rpc;charset=utf-8",
+								"type": "text"
+							},
+							{
+								"key": "X-SBISSessionID",
+								"value": "00000003-0228cfcc-0bba-f744307c504c479f",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"jsonrpc\": \"2.0\",\r\n\t\"method\": \"СБИС.СписокЗадач\",\r\n\t\"params\": {\r\n\t\t\"Фильтр\": {\r\n\t\t\t\"ТипСписка\": \"НаМне\",\r\n\t\t\t\"Сотрудник\": {\r\n\t\t\t\t\"Фамилия\": \"Лыхов\"\r\n\t\t\t}\r\n\t\t}\r\n\t},\r\n\t\"id\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://online.sbis.ru/service/?srv=1",
+							"protocol": "https",
+							"host": [
+								"online",
+								"sbis",
+								"ru"
+							],
+							"path": [
+								"service",
+								""
+							],
+							"query": [
+								{
+									"key": "srv",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "СБИС.ИнформацияОКонтрагенте Copy",
+					"id": "a4b8c498-1ec2-40b5-a80f-6ed3cf2161c6",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json-rpc;charset=utf-8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"jsonrpc\": \"2.0\",\r\n\t\"method\": \"СБИС.ИнформацияОКонтрагенте\",\r\n\t\"params\": {\r\n\t\t\"Участник\": {\r\n\t\t\t\"СвЮЛ\": {\r\n\t\t\t\t\"ИНН\": \"7703647595\",\r\n\t\t\t\t\"КПП\": \"898989898\"\r\n\t\t\t}\r\n\t\t}\r\n\t},\r\n\t\"id\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://fix-online.sbis.ru/service/?srv=1",
+							"protocol": "https",
+							"host": [
+								"fix-online",
+								"sbis",
+								"ru"
+							],
+							"path": [
+								"service",
+								""
+							],
+							"query": [
+								{
+									"key": "srv",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "cf9aca10-0e1e-4afc-b69a-bbb72eef041d"
+		},
+		{
+			"name": "Внутренние",
+			"item": [
+				{
+					"name": "Задача.Список",
+					"id": "d2a37b91-a3f2-4d37-b990-cac6c9656f6e",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json-rpc;charset=utf-8",
+								"type": "text"
+							},
+							{
+								"key": "X-SBISSessionID",
+								"value": "00000003-0228cfcc-0bba-f744307c504c479f",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"jsonrpc\": \"2.0\",\r\n\t\"protocol\": 7,\r\n\t\"method\": \"Задача.Список\",\r\n\t\"params\": {\r\n\t\t\"Фильтр\": {\r\n\t\t\t\"d\": [\r\n\t\t\t\t\"Выполненные\",\r\n\t\t\t\t[\r\n\t\t\t\t\t\"2025-01-17\",\r\n\t\t\t\t\t\"2025-01-17\"\r\n\t\t\t\t]\r\n\t\t\t],\r\n\t\t\t\"s\": [\r\n\t\t\t\t{\r\n\t\t\t\t\t\"t\": \"Строка\",\r\n\t\t\t\t\t\"n\": \"ТипСписка\"\r\n\t\t\t\t},\r\n\t\t\t\t{\r\n\t\t\t\t\t\"t\": {\r\n\t\t\t\t\t\t\"n\": \"Массив\",\r\n\t\t\t\t\t\t\"t\": \"Дата\"\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"n\": \"ФильтрПериод\"\r\n\t\t\t\t}\r\n\t\t\t],\r\n\t\t\t\"_type\": \"record\",\r\n\t\t\t\"f\": 0\r\n\t\t},\r\n\t\t\"Сортировка\": null,\r\n\t\t\"Навигация\": {\r\n\t\t\t\"d\": [\r\n\t\t\t\t\"forward\",\r\n\t\t\t\ttrue,\r\n\t\t\t\t100,\r\n\t\t\t\tnull\r\n\t\t\t],\r\n\t\t\t\"s\": [\r\n\t\t\t\t{\r\n\t\t\t\t\t\"t\": \"Строка\",\r\n\t\t\t\t\t\"n\": \"Direction\"\r\n\t\t\t\t},\r\n\t\t\t\t{\r\n\t\t\t\t\t\"t\": \"Логическое\",\r\n\t\t\t\t\t\"n\": \"HasMore\"\r\n\t\t\t\t},\r\n\t\t\t\t{\r\n\t\t\t\t\t\"t\": \"Число целое\",\r\n\t\t\t\t\t\"n\": \"Limit\"\r\n\t\t\t\t},\r\n\t\t\t\t{\r\n\t\t\t\t\t\"t\": \"Запись\",\r\n\t\t\t\t\t\"n\": \"Position\"\r\n\t\t\t\t}\r\n\t\t\t],\r\n\t\t\t\"_type\": \"record\",\r\n\t\t\t\"f\": 0\r\n\t\t},\r\n\t\t\"ДопПоля\": []\r\n\t},\r\n\t\"id\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://online.sbis.ru/service/",
+							"protocol": "https",
+							"host": [
+								"online",
+								"sbis",
+								"ru"
+							],
+							"path": [
+								"service",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "KPIDoc.TaskDetailList",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "0edafc1a-c110-4f14-95e1-da698e94f071",
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "899311f3-284a-404a-aa3e-2d7054e93002",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json-rpc;charset=utf-8",
+								"type": "text"
+							},
+							{
+								"key": "X-SBISSessionID",
+								"value": "00000003-0228cfcc-0bba-a268f2c7ccbe446b",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"jsonrpc\": \"2.0\",\r\n\t\"protocol\": 7,\r\n\t\"method\": \"KPIDoc.TaskDetailList\",\r\n\t\"params\": {\r\n\t\t\"Фильтр\": {\r\n\t\t\t\"d\": [\r\n\t\t\t\t54542569,\r\n\t\t\t\t\"2025-01-01\",\r\n\t\t\t\t\"2025-01-31\",\r\n\t\t\t\t3332\r\n\t\t\t],\r\n\t\t\t\"s\": [\r\n\t\t\t\t{\r\n\t\t\t\t\t\"t\": \"Число целое\",\r\n\t\t\t\t\t\"n\": \"Person\"\r\n\t\t\t\t},\r\n\t\t\t\t{\r\n\t\t\t\t\t\"t\": \"Дата\",\r\n\t\t\t\t\t\"n\": \"StartDate\"\r\n\t\t\t\t},\r\n\t\t\t\t{\r\n\t\t\t\t\t\"t\": \"Дата\",\r\n\t\t\t\t\t\"n\": \"EndDate\"\r\n\t\t\t\t},\r\n\t\t\t\t{\r\n\t\t\t\t\t\"t\": \"Число целое\",\r\n\t\t\t\t\t\"n\": \"KPI\"\r\n\t\t\t\t}\r\n\t\t\t],\r\n\t\t\t\"_type\": \"record\",\r\n\t\t\t\"f\": 0\r\n\t\t},\r\n\t\t\"Сортировка\": null,\r\n\t\t\"Навигация\": {\r\n\t\t\t\"d\": [\r\n\t\t\t\t\"forward\",\r\n\t\t\t\t1000,\r\n\t\t\t\tnull\r\n\t\t\t],\r\n\t\t\t\"s\": [\r\n\t\t\t\t{\r\n\t\t\t\t\t\"t\": \"Строка\",\r\n\t\t\t\t\t\"n\": \"Direction\"\r\n\t\t\t\t},\r\n\t\t\t\t{\r\n\t\t\t\t\t\"t\": \"Число целое\",\r\n\t\t\t\t\t\"n\": \"Limit\"\r\n\t\t\t\t},\r\n\t\t\t\t{\r\n\t\t\t\t\t\"t\": \"Запись\",\r\n\t\t\t\t\t\"n\": \"Position\"\r\n\t\t\t\t}\r\n\t\t\t],\r\n\t\t\t\"_type\": \"record\",\r\n\t\t\t\"f\": 0\r\n\t\t},\r\n\t\t\"ДопПоля\": []\r\n\t},\r\n\t\"id\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://online.sbis.ru/service/",
+							"protocol": "https",
+							"host": [
+								"online",
+								"sbis",
+								"ru"
+							],
+							"path": [
+								"service",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "c8771c80-7073-4e64-9af0-44314b921ce6"
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "22f4bfba-de7a-4e06-9a13-dd6df4c59796",
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "9369da3c-0ee9-4ef4-b878-d5b1d4b01ff1",
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "f6f318fc-b634-4fc8-bfdf-771f7c5bf170",
+			"key": "login",
+			"value": "eo.lykhov",
+			"type": "string"
+		},
+		{
+			"id": "8e6ebf00-3318-4c59-bb30-df8acb080a06",
+			"key": "password",
+			"value": "Tar4ok.2.SBI*",
+			"type": "string"
+		},
+		{
+			"id": "108f336a-08ce-41ef-ac5b-56f540a84bbe",
+			"key": "session_id",
+			"value": "",
+			"type": "default"
+		}
+	]
+}
